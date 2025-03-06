@@ -1,0 +1,13 @@
+For this assignment, we implemented various Digital Image Processing (DIP) functions using dynamic memory allocation in C. 
+The program allows users to load, modify, and save images using operations such as cropping, resizing, adding borders, and watermarking. 
+A key challenge was transitioning from fixed-size arrays to dynamically allocated memory using pointers, 
+which required careful management of memory allocation and deallocation. Additionally, 
+we modified the Makefile to include support for running PhotoLabTest under Valgrind to detect memory leaks and invalid accesses.
+
+One of the biggest challenges in this project was debugging certain functions, 
+particularly those involving dynamic memory manipulation. 
+Functions such as Resize and Watermark were especially difficult due to pointer arithmetic errors and memory allocation issues, 
+leading to segmentation faults and unexpected behavior. 
+Debugging these issues required extensive use of printf statements, GDB, and Valgrind to identify memory leaks and invalid accesses. 
+Despite the struggles, resolving these issues helped improve my understanding of memory management in C 
+and reinforced the importance of structured debugging techniques.

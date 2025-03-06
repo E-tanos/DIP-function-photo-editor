@@ -1,0 +1,141 @@
+Script started on 2025-03-04 23:43:43-08:00
+]0;emdevera@bondi:hw4[emdevera@bondi hw4]$ make
+gcc -Wall -g -c PhotoLab.c -o PhotoLab.o
+gcc -Wall -g -c Image.c -o Image.o
+gcc -Wall -g -c DIPs.c -o DIPs.o
+gcc -Wall -g -c Advanced.c -o Advanced.o
+gcc -Wall -g -c FileIO.c -o FileIO.o
+gcc -Wall -g -c Test.c -o Test.o
+gcc -Wall -g -o PhotoLab PhotoLab.o Image.o DIPs.o Advanced.o FileIO.o Test.o
+gcc -Wall -g -o PhotoLabTest PhotoLab.o Test.o Image.o DIPs.o Advanced.o FileIO.o
+cp ~eecs22/public/EngPlaza.ppm .
+cp ~eecs22/public/watermark_template.ppm .
+cp ~eecs22/public/border.ppm .
+]0;emdevera@bondi:hw4[emdevera@bondi hw4]$ ./Photol[KLab
+
+----------------------------
+ 1: Load a PPM image
+ 2: Save an image in PPM and JPEG format
+ 3: Change a color image to Black & White
+ 4: Make a negative of an image
+ 5: Color filter an image
+ 6: Sketch the edge of an image
+ 7: Shuffle an image
+ 8: Flip an image vertically
+ 9: Mirror an image vertically
+10: Add border to an image
+11: Pixelate an image
+12: Shift an image
+13: Crop an image
+14: Resize an image
+15: Add Watermark to an image
+16: Rotate an image by 90 degree
+17: Test all functions
+18: Exit
+Please make your choice: 1
+Please input the file name to load: EngPlaza
+
+----------------------------
+ 1: Load a PPM image
+ 2: Save an image in PPM and JPEG format
+ 3: Change a color image to Black & White
+ 4: Make a negative of an image
+ 5: Color filter an image
+ 6: Sketch the edge of an image
+ 7: Shuffle an image
+ 8: Flip an image vertically
+ 9: Mirror an image vertically
+10: Add border to an image
+11: Pixelate an image
+12: Shift an image
+13: Crop an image
+14: Resize an image
+15: Add Watermark to an image
+16: Rotate an image by 90 degree
+17: Test all functions
+18: Exit
+Please make your choice: 17
+0 mismatching pixels (0.000%) identified in bw_diff.ppm.
+0 mismatching pixels (0.000%) identified in negative_diff.ppm.
+0 mismatching pixels (0.000%) identified in colorfilter_diff.ppm.
+0 mismatching pixels (0.000%) identified in edge_diff.ppm.
+0 mismatching pixels (0.000%) identified in shuffle_diff.ppm.
+0 mismatching pixels (0.000%) identified in vflip_diff.ppm.
+0 mismatching pixels (0.000%) identified in hmirror_diff.ppm.
+0 mismatching pixels (0.000%) identified in border_diff.ppm.
+0 mismatching pixels (0.000%) identified in pixelate_diff.ppm.
+0 mismatching pixels (0.000%) identified in shift_diff.ppm.
+0 mismatching pixels (0.000%) identified in crop_diff.ppm.
+0 mismatching pixels (0.000%) identified in smallresize_diff.ppm.
+0 mismatching pixels (0.000%) identified in bigresize_diff.ppm.
+0 mismatching pixels (0.000%) identified in watermark_diff.ppm.
+0 mismatching pixels (0.000%) identified in rotateby90_diff.ppm.
+
+----------------------------
+ 1: Load a PPM image
+ 2: Save an image in PPM and JPEG format
+ 3: Change a color image to Black & White
+ 4: Make a negative of an image
+ 5: Color filter an image
+ 6: Sketch the edge of an image
+ 7: Shuffle an image
+ 8: Flip an image vertically
+ 9: Mirror an image vertically
+10: Add border to an image
+11: Pixelate an image
+12: Shift an image
+13: Crop an image
+14: Resize an image
+15: Add Watermark to an image
+16: Rotate an image by 90 degree
+17: Test all functions
+18: Exit
+Please make your choice: 18
+You exit the program.
+]0;emdevera@bondi:hw4[emdevera@bondi hw4]$ ./valgrind
+./valgrind: Command not found.
+]0;emdevera@bondi:hw4[emdevera@bondi hw4]$ --leak-check=full PhotoLabTest[1@.[1@/
+--leak-check=full: Command not found.
+]0;emdevera@bondi:hw4[emdevera@bondi hw4]$ valgrind --leak-check=full PhotoL abTest[A[55Gl [55G[50G[1@.Photoa[1@L[A[51GPhot[1@/PhotL[1@o[A[52GPhoto
+==3528183== Memcheck, a memory error detector
+==3528183== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==3528183== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==3528183== Command: ./PhotoLabTest
+==3528183== 
+
+----------------------------
+ 1: Load a PPM image
+ 2: Save an image in PPM and JPEG format
+ 3: Change a color image to Black & White
+ 4: Make a negative of an image
+ 5: Color filter an image
+ 6: Sketch the edge of an image
+ 7: Shuffle an image
+ 8: Flip an image vertically
+ 9: Mirror an image vertically
+10: Add border to an image
+11: Pixelate an image
+12: Shift an image
+13: Crop an image
+14: Resize an image
+15: Add Watermark to an image
+16: Rotate an image by 90 degree
+17: Test all functions
+18: Exit
+Please make your choice: 18
+You exit the program.
+==3528183== 
+==3528183== HEAP SUMMARY:
+==3528183==     in use at exit: 0 bytes in 0 blocks
+==3528183==   total heap usage: 2 allocs, 2 frees, 2,048 bytes allocated
+==3528183== 
+==3528183== All heap blocks were freed -- no leaks are possible
+==3528183== 
+==3528183== For lists of detected and suppressed errors, rerun with: -s
+==3528183== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+]0;emdevera@bondi:hw4[emdevera@bondi hw4]$ make clean
+rm -f PhotoLab.o Image.o DIPs.o Advanced.o FileIO.o Test.o PhotoLab PhotoLabTest *.ppm *.jpg PhotoLab.script
+]0;emdevera@bondi:hw4[emdevera@bondi hw4]$ exit
+exit
+
+Script done on 2025-03-04 23:46:59-08:00
